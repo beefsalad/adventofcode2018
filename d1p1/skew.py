@@ -3,7 +3,6 @@
 import os
 # shit portability, on the to learn list
 path = os.getcwd()+"/input.txt"
-print(path)
 freq = 0
 change = 0
 with open(path) as filepath:

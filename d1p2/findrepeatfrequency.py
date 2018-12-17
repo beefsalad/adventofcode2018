@@ -33,15 +33,12 @@ def check (foundfreq, changes, changecount):
     freqlist = []
     while n < changecount:
         foundfreq += changes[n]
-        if foundfreq in freqlist:
-            print('found dupe?!', foundfreq)
-        else:
+        while foundfreq not in freqlist:
             freqlist.append(foundfreq)
-            n += 1
+            if n == changecount:
+                n = 0
     else:
-        n = 0
-        print(n, 'try again!')   
-        freqlist.append(foundfreq)
+        print(foundfreq, 'foundit')   
         return (freq)
 
 

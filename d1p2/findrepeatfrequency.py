@@ -31,19 +31,22 @@ changecount = len(changelist)
 def check (foundfreq, changes, changecount):
     n = 0
     freqlist = []
-    while n < changecount:
-        foundfreq += changes[n]
-        while foundfreq not in freqlist:
+#    print(freqlist)
+    while True:
+    #    while n < changecount:
+        print(foundfreq)
+        while foundfreq not in freqlist and n < changecount:
             freqlist.append(foundfreq)
+            foundfreq += changes[n]
+            # print(foundfreq)
+            n += 1
             if n == changecount:
                 n = 0
-    else:
-        print(foundfreq, 'foundit')   
-        return (freq)
+        else:
+            print(foundfreq, 'foundit')   
+            return (freq)
 
 
 
 check(freq, changelist, len(changelist))
-
-print('the answer is not 0 and its not 13 or -12, or 576i think its ', freq)
-print('and we still arent checking for duplicates...just checking if in the list.  need to seperate it out further somehow...if freq = freqlist(n-1)? hrmph')
+print('the answer is not 0 and its not 13 or -12, or 576 i think its ', freq)
